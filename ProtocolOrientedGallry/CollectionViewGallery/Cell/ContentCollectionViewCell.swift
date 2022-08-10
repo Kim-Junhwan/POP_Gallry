@@ -7,17 +7,23 @@
 
 import UIKit
 
-class ContentCollectionViewCell: UICollectionViewCell {
-    
+class ContentCollectionViewCell: UICollectionViewCell ,MediaContainer{
     static let identifier = "ContentCollectionViewCell"
     
-    @IBOutlet weak var contentImageView: UIImageView!
-    @IBOutlet weak var contentDescriptionLabel: UILabel!
-    
+    @IBOutlet weak var media: UIImageView!
+    @IBOutlet weak var note: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    var content: Content? {
+        didSet {
+            contentUpdate()
+        }
+    }
+    
+    
 
 }

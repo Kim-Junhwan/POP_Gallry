@@ -7,12 +7,13 @@
 
 import UIKit
 
-class ContentTableViewCell: UITableViewCell {
+class ContentTableViewCell: UITableViewCell ,MediaContainer {
+    @IBOutlet weak var media: UIImageView!
+    
+    @IBOutlet weak var note: UILabel!
+    
     
     static let identifier = "ContentTableViewCell"
-
-    @IBOutlet weak var contentImageView: UIImageView!
-    @IBOutlet weak var contentDescriptionLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -25,5 +26,12 @@ class ContentTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    var content: Content? {
+        didSet {
+            contentUpdate()
+        }
+    }
+    
     
 }

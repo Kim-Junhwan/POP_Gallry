@@ -7,20 +7,15 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
-class GalleryCollectionViewController: UICollectionViewController, ContainContents {
+class GalleryCollectionViewController: UICollectionViewController, ContainContents ,CanShowDetailView{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        collectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ContentCollectionViewCell.identifier)
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+               flowLayout.itemSize = CGSize(width: 100, height: 100)
+               collectionView.collectionViewLayout = flowLayout
     }
 
     /*
@@ -37,20 +32,20 @@ class GalleryCollectionViewController: UICollectionViewController, ContainConten
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return contents.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCollectionViewCell.identifier, for: indexPath) as? ContentCollectionViewCell else { fatalError("cannot found cell") }
     
         // Configure the cell
-    
+        cell.content = contents[indexPath.row]
         return cell
     }
 
