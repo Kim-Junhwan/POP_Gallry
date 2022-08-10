@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="855.07246376811599" y="-219.64285714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="cMc-9G-B8v">
             <objects>
-                <viewController id="xSQ-7s-kD7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xSQ-7s-kD7" customClass="DetailViewController" customModule="ProtocolOrientedGallry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JfR-kK-whL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,6 +79,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="C74-TP-hKZ"/>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="TMQ-sO-TPx" id="wkY-71-ZRk"/>
+                        <outlet property="detailImageView" destination="36M-sJ-CB6" id="lrw-Qw-du7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yde-IL-IMN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

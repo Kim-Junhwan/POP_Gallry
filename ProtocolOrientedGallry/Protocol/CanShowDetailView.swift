@@ -8,13 +8,15 @@
 import Foundation
 import UIKit
 
-protocol CanShowDetailView {
+protocol CanShowDetailView{
     func showDetailView(withContent content: Content)
     var navigationController: UINavigationController? { get }
 }
 
-extension CanShowDetailView {
+extension CanShowDetailView where Self:UIViewController {
+    
     func showDetailView(withContent content: Content) {
-        
+        guard let newNC = self.storyboard?.instantiateViewController(withIdentifier: "DetailView") else { return }
+        self.navigationController?.pushViewController(newNC, animated: true)
     }
 }

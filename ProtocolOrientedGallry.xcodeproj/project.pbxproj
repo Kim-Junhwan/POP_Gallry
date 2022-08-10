@@ -26,6 +26,7 @@
 		C7F77A9228A2B95E00C2F947 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77A9128A2B95E00C2F947 /* NetworkManager.swift */; };
 		C7F77A9628A34DA400C2F947 /* ContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77A9528A34DA400C2F947 /* ContentResponse.swift */; };
 		C7F77A9928A3FB2500C2F947 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77A9828A3FB2500C2F947 /* UIImageView+Extension.swift */; };
+		C7F77A9B28A4194C00C2F947 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77A9A28A4194C00C2F947 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		C7F77A9128A2B95E00C2F947 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C7F77A9528A34DA400C2F947 /* ContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentResponse.swift; sourceTree = "<group>"; };
 		C7F77A9828A3FB2500C2F947 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		C7F77A9A28A4194C00C2F947 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				C7F77A6828A26EE700C2F947 /* Assets.xcassets */,
 				C7F77A6A28A26EE700C2F947 /* LaunchScreen.storyboard */,
 				C7F77A6D28A26EE700C2F947 /* Info.plist */,
+				C7F77A9A28A4194C00C2F947 /* DetailViewController.swift */,
 			);
 			path = ProtocolOrientedGallry;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				C7F77A8D28A2A2F500C2F947 /* MediaContainer.swift in Sources */,
 				C7F77A6228A26EE600C2F947 /* SceneDelegate.swift in Sources */,
 				C7F77A7C28A279F800C2F947 /* ContentProtocol.swift in Sources */,
+				C7F77A9B28A4194C00C2F947 /* DetailViewController.swift in Sources */,
 				C7F77A7E28A27A1100C2F947 /* Content.swift in Sources */,
 				C7F77A8F28A2A4D300C2F947 /* CanShowDetailView.swift in Sources */,
 			);

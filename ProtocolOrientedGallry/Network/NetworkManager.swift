@@ -10,6 +10,7 @@ import UIKit
 
 final class NetworkManager {
     static let shared = NetworkManager()
+    var isFetch: Bool = false
     
     func fetchImage(url: String, completion: @escaping (UIImage)->Void) {
         guard let url = URL(string: url) else { return }
@@ -20,6 +21,8 @@ final class NetworkManager {
     }
     
     func fetchImageList(url: String, completion : @escaping ([ContentResponse]?) -> ()) {
+        if !isFetch{
+            isFetch = true
         guard let url = URL(string: url) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
@@ -29,5 +32,6 @@ final class NetworkManager {
                 completion(imageList)
             }
         }.resume()
+        }
     }
 }
