@@ -16,7 +16,11 @@ protocol CanShowDetailView{
 extension CanShowDetailView where Self:UIViewController {
     
     func showDetailView(withContent content: Content) {
-        guard let newNC = self.storyboard?.instantiateViewController(withIdentifier: "DetailView") else { return }
-        self.navigationController?.pushViewController(newNC, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let newVC = storyboard.instantiateViewController(identifier: "DetailView") as? DetailViewController else { return }
+        newVC.content = content
+        self.navigationController?.pushViewController(newVC, animated: true)
     }
+    
+    
 }

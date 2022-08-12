@@ -13,9 +13,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     
+    var content: Content?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let content = content {
+            self.detailImageView.load(url: content.url)
+            self.detailDescriptionLabel.text = content.description
+        }
         // Do any additional setup after loading the view.
     }
     
