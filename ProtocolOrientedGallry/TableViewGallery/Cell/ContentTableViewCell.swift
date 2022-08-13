@@ -7,31 +7,71 @@
 
 import UIKit
 
-class ContentTableViewCell: UITableViewCell ,MediaContainer {
-    @IBOutlet weak var media: UIImageView!
-    
-    @IBOutlet weak var note: UILabel!
-    
+class ContentTableViewCell: UITableViewCell , MediaContainer{
     
     static let identifier = "ContentTableViewCell"
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     var content: Content? {
         didSet {
+            addView()
+            autoLayout()
             contentUpdate()
         }
     }
     
+    lazy var note: UILabel = {
+        let note = UILabel()
+        note.translatesAutoresizingMaskIntoConstraints = false
+        return note
+    }()
     
+    lazy var videoView: VideoView = {
+        let videoView = VideoView(url: content?.url ?? "")
+        videoView.translatesAutoresizingMaskIntoConstraints = false
+        return videoView
+    }()
+    
+    lazy var mediaImageView: UIImageView = {
+        let mediaImageView = UIImageView()
+        mediaImageView.translatesAutoresizingMaskIntoConstraints = false
+        return mediaImageView
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addView() {
+        addSubview(media)
+        addSubview(note)
+    }
+    
+    func autoLayout() {
+        NSLayoutConstraint.activate([
+            media.widthAnchor.constraint(equalToConstant: 100),
+            media.heightAnchor.constraint(equalTo: media.widthAnchor),
+            media.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            media.topAnchor.constraint(equalTo: self.topAnchor),
+            media.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            note.leadingAnchor.constraint(equalTo: media.trailingAnchor),
+            note.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            note.topAnchor.constraint(equalTo: self.topAnchor),
+            note.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+    }
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 }

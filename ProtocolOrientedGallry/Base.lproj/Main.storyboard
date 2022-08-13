@@ -17,16 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentTableViewCell" id="Pdn-6C-bbf" customClass="ContentTableViewCell" customModule="ProtocolOrientedGallry" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pdn-6C-bbf" id="7io-aP-xtz">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="MHw-vT-gQD" id="Cdz-sS-eTh"/>
                             <outlet property="delegate" destination="MHw-vT-gQD" id="vvJ-e5-5Gl"/>
@@ -39,9 +29,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="xSQ-7s-kD7" kind="show" id="NMB-jd-SAN"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTQ-kN-kdy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,35 +41,10 @@
                     <view key="view" contentMode="scaleToFill" id="JfR-kK-whL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="36M-sJ-CB6">
-                                <rect key="frame" x="0.0" y="188" width="414" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="Xux-ue-EiX"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMQ-sO-TPx">
-                                <rect key="frame" x="186" y="608" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9Ho-U9-bff"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="9Ho-U9-bff" firstAttribute="trailing" secondItem="36M-sJ-CB6" secondAttribute="trailing" id="HzL-s9-grj"/>
-                            <constraint firstItem="36M-sJ-CB6" firstAttribute="leading" secondItem="9Ho-U9-bff" secondAttribute="leading" id="aNB-Y5-RVh"/>
-                            <constraint firstItem="TMQ-sO-TPx" firstAttribute="top" secondItem="36M-sJ-CB6" secondAttribute="bottom" constant="20" id="ar4-0u-KcO"/>
-                            <constraint firstItem="TMQ-sO-TPx" firstAttribute="centerX" secondItem="JfR-kK-whL" secondAttribute="centerX" id="sI2-5H-vnb"/>
-                            <constraint firstItem="36M-sJ-CB6" firstAttribute="top" secondItem="9Ho-U9-bff" secondAttribute="top" constant="100" id="x7K-2B-GR4"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="C74-TP-hKZ"/>
-                    <connections>
-                        <outlet property="detailDescriptionLabel" destination="TMQ-sO-TPx" id="wkY-71-ZRk"/>
-                        <outlet property="detailImageView" destination="36M-sJ-CB6" id="lrw-Qw-du7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yde-IL-IMN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,9 +86,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="xSQ-7s-kD7" kind="show" id="0Qm-cE-eoZ"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQX-Te-c4N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,9 +128,6 @@
             <point key="canvasLocation" x="-55.072463768115945" y="501.5625"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="NMB-jd-SAN"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

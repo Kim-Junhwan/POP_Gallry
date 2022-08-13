@@ -7,23 +7,59 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-
+class DetailViewController: UIViewController , MediaContainer{
+    var content: Content? {
+        didSet {
+            contentUpdate()
+        }
+    }
     
-    @IBOutlet weak var detailImageView: UIImageView!
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    lazy var note: UILabel = {
+        let note = UILabel()
+        note.translatesAutoresizingMaskIntoConstraints = false
+        return note
+    }()
     
-    var content: Content?
+    lazy var videoView: VideoView = {
+        let videoView = VideoView(url: "")
+        videoView.translatesAutoresizingMaskIntoConstraints = false
+        return videoView
+    }()
+    
+    lazy var mediaImageView: UIImageView = {
+        let mediaImageView = UIImageView()
+        mediaImageView.translatesAutoresizingMaskIntoConstraints = false
+        return mediaImageView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let content = content {
-            self.detailImageView.load(url: content.url)
-            self.detailDescriptionLabel.text = content.description
+            self.content = content
+            print(content)
         }
+        addView()
+        autolayOut()
         // Do any additional setup after loading the view.
     }
     
+    func addView() {
+        self.view.addSubview(media)
+        self.view.addSubview(note)
+    }
+    
+    func autolayOut() {
+        NSLayoutConstraint.activate([
+            media.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            media.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            media.widthAnchor.constraint(equalToConstant: 400),
+            media.heightAnchor.constraint(equalTo: media.widthAnchor),
+            
+            note.topAnchor.constraint(equalTo: media.bottomAnchor ,constant: 5),
+            note.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+        
+    }
 
     /*
     // MARK: - Navigation

@@ -7,23 +7,62 @@
 
 import UIKit
 
-class ContentCollectionViewCell: UICollectionViewCell ,MediaContainer{
-    static let identifier = "ContentCollectionViewCell"
-    
-    @IBOutlet weak var media: UIImageView!
-    @IBOutlet weak var note: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
+class ContentCollectionViewCell: UICollectionViewCell ,MediaContainer {
     var content: Content? {
-        didSet {
+        didSet{
             contentUpdate()
+            addView()
+            autoLayout()
         }
     }
     
+    lazy var note: UILabel = {
+        let note = UILabel()
+        note.translatesAutoresizingMaskIntoConstraints = false
+        return note
+    }()
     
+    lazy var videoView: VideoView = {
+        let videoView = VideoView(url: content?.url ?? "")
+        videoView.translatesAutoresizingMaskIntoConstraints = false
+        return videoView
+    }()
+    
+    lazy var mediaImageView: UIImageView = {
+        let mediaImageView = UIImageView()
+        mediaImageView.translatesAutoresizingMaskIntoConstraints = false
+        return mediaImageView
+    }()
+    
+    static let identifier = "ContentCollectionViewCell"
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addView() {
+        contentView.addSubview(media)
+        contentView.addSubview(note)
+    }
+    
+    func autoLayout() {
+        NSLayoutConstraint.activate([
+            media.widthAnchor.constraint(equalToConstant: 100),
+            media.heightAnchor.constraint(equalTo: media.widthAnchor),
+            media.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            media.topAnchor.constraint(equalTo: self.topAnchor),
+            media.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            note.topAnchor.constraint(equalTo: media.bottomAnchor, constant: 2),
+            note.centerXAnchor.constraint(equalTo: media.centerXAnchor),
+        ])
+    }
 }

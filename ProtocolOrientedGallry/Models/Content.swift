@@ -8,6 +8,12 @@
 import Foundation
 
 struct Content {
+    enum MediaType {
+        case image
+        case video
+    }
+    
+    var type: Content.MediaType
     var url: String
     var description: String
 }

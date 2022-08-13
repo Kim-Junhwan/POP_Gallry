@@ -21,6 +21,4 @@ extension CanShowDetailView where Self:UIViewController {
         newVC.content = content
         self.navigationController?.pushViewController(newVC, animated: true)
     }
-    
-    
 }

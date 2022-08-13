@@ -6,14 +6,14 @@
 //
 
 import UIKit
-
+import AVFoundation
 
 class GalleryCollectionViewController: UICollectionViewController, ContainContents ,CanShowDetailView{
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ContentCollectionViewCell.identifier)
+        collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: ContentCollectionViewCell.identifier)
         let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
                flowLayout.itemSize = CGSize(width: 100, height: 100)
                collectionView.collectionViewLayout = flowLayout
@@ -41,4 +41,6 @@ class GalleryCollectionViewController: UICollectionViewController, ContainConten
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         showDetailView(withContent: contents[indexPath.row])
     }
+    
+    
 }

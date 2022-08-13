@@ -7,21 +7,39 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 protocol MediaContainer {
     var content: Content? { get set }
-    var media: UIImageView! { get set}
-    var note: UILabel! { get set }
+    var media: UIView { mutating get }
+    var note: UILabel { get }
+    
+    var videoView: VideoView { get }
+    var mediaImageView: UIImageView { get }
     
     func contentUpdate()
 }
 
 extension MediaContainer {
+     var media: UIView {
+         guard let content = content else { return UIImageView() }
+        switch content.type {
+        case .video:
+            return videoView
+        case .image:
+            return mediaImageView
+        }
+    }
     
     func contentUpdate() {
         if let content = content {
-            media.load(url: content.url)
-            note.text = content.description
+            switch content.type {
+            case .video:
+                videoView.load(url: content.url)
+            case .image:
+                mediaImageView.load(url: content.url)
+            }
+            self.note.text = content.description
         }
     }
 }
