@@ -11,7 +11,7 @@ import AVFoundation
 
 protocol MediaContainer {
     var content: Content? { get set }
-    var media: UIView { mutating get }
+    var media: UIView { get }
     var note: UILabel { get }
     
     var videoView: VideoView { get }
