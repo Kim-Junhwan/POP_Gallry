@@ -22,34 +22,14 @@ final class VideoView: UIView {
         return view
       }()
     
-    init(url: String){
-        self.url = url
-           super.init(frame: .zero)
-           
-           NSLayoutConstraint.activate([
-             self.videoBackgroundView.leftAnchor.constraint(equalTo: self.leftAnchor),
-             self.videoBackgroundView.rightAnchor.constraint(equalTo: self.rightAnchor),
-             self.videoBackgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-             self.videoBackgroundView.topAnchor.constraint(equalTo: self.topAnchor),
-           ])
-         
-           guard let url = URL(string: url) else { return }
-           let item = AVPlayerItem(url: url)
-           self.player.replaceCurrentItem(with: item)
-           let playerLayer = AVPlayerLayer(player: self.player)
-           playerLayer.frame = self.videoBackgroundView.bounds
-           playerLayer.videoGravity = .resizeAspectFill
-           self.playerLayer = playerLayer
-           self.videoBackgroundView.layer.addSublayer(playerLayer)
-           self.player.play()
-        
-//        super.init(frame: .zero)
-//        NSLayoutConstraint.activate([
-//            self.videoBackgroundView.leftAnchor.constraint(equalTo: self.leftAnchor),
-//            self.videoBackgroundView.rightAnchor.constraint(equalTo: self.rightAnchor),
-//            self.videoBackgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-//            self.videoBackgroundView.topAnchor.constraint(equalTo: self.topAnchor),
-//        ])
+    init(){
+        super.init(frame: .zero)
+        NSLayoutConstraint.activate([
+            self.videoBackgroundView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.videoBackgroundView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            self.videoBackgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.videoBackgroundView.topAnchor.constraint(equalTo: self.topAnchor),
+        ])
     }
     
     required init?(coder: NSCoder) {

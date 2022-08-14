@@ -21,7 +21,7 @@ class DetailViewController: UIViewController , MediaContainer{
     }()
     
     lazy var videoView: VideoView = {
-        let videoView = VideoView(url: "")
+        let videoView = VideoView()
         videoView.translatesAutoresizingMaskIntoConstraints = false
         return videoView
     }()

@@ -25,7 +25,6 @@
 		C7F77A9628A34DA400C2F947 /* ContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77A9528A34DA400C2F947 /* ContentResponse.swift */; };
 		C7F77A9928A3FB2500C2F947 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77A9828A3FB2500C2F947 /* UIImageView+Extension.swift */; };
 		C7F77A9B28A4194C00C2F947 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77A9A28A4194C00C2F947 /* DetailViewController.swift */; };
-		C7F77A9D28A6C2B600C2F947 /* ContentPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77A9C28A6C2B600C2F947 /* ContentPresentable.swift */; };
 		C7F77AA028A765FE00C2F947 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77A9F28A765FE00C2F947 /* DemoData.swift */; };
 		C7F77AA228A785C500C2F947 /* AVPlayerLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77AA128A785C400C2F947 /* AVPlayerLayer+Extension.swift */; };
 		C7F77AA528A7904C00C2F947 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F77AA428A7904C00C2F947 /* VideoView.swift */; };
@@ -52,7 +51,6 @@
 		C7F77A9528A34DA400C2F947 /* ContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentResponse.swift; sourceTree = "<group>"; };
 		C7F77A9828A3FB2500C2F947 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		C7F77A9A28A4194C00C2F947 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		C7F77A9C28A6C2B600C2F947 /* ContentPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPresentable.swift; sourceTree = "<group>"; };
 		C7F77A9F28A765FE00C2F947 /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		C7F77AA128A785C400C2F947 /* AVPlayerLayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayerLayer+Extension.swift"; sourceTree = "<group>"; };
 		C7F77AA428A7904C00C2F947 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				C7F77A7B28A279F800C2F947 /* ContentProtocol.swift */,
 				C7F77A8C28A2A2F500C2F947 /* MediaContainer.swift */,
 				C7F77A8E28A2A4D300C2F947 /* CanShowDetailView.swift */,
-				C7F77A9C28A6C2B600C2F947 /* ContentPresentable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -277,7 +274,6 @@
 				C7F77A9228A2B95E00C2F947 /* NetworkManager.swift in Sources */,
 				C7F77A7928A2780700C2F947 /* GalleryTableViewController.swift in Sources */,
 				C7F77A9928A3FB2500C2F947 /* UIImageView+Extension.swift in Sources */,
-				C7F77A9D28A6C2B600C2F947 /* ContentPresentable.swift in Sources */,
 				C7F77A6028A26EE600C2F947 /* AppDelegate.swift in Sources */,
 				C7F77AA228A785C500C2F947 /* AVPlayerLayer+Extension.swift in Sources */,
 				C7F77A8A28A2837C00C2F947 /* ContentTableViewCell.swift in Sources */,

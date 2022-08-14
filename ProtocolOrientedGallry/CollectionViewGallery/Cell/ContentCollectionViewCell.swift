@@ -23,7 +23,7 @@ class ContentCollectionViewCell: UICollectionViewCell ,MediaContainer {
     }()
     
     lazy var videoView: VideoView = {
-        let videoView = VideoView(url: content?.url ?? "")
+        let videoView = VideoView()
         videoView.translatesAutoresizingMaskIntoConstraints = false
         return videoView
     }()
